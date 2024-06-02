@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://github.com/Os1907/atmosphere",
   "scripts": {
-    "predeploy": "npm run div",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite --host",
     "build": "tsc && vite build",
