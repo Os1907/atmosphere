@@ -105,7 +105,7 @@ interface typeData {
 
 
 export const weather = async (city: string) => {
-    const response = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_APP_API_KEY}&q=${city}&days=7`).catch(() => console.log("can't find data "))
+    const response = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=$5f606d13563440c3835153320233012&q=${city}&days=7`).catch(() => console.log("can't find data "))
 const data: typeData  = response?.data;
     return data;
 }
