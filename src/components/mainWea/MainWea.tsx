@@ -6,10 +6,10 @@ import moon from '../../../public/Weather/moon.png'
 import snow from '../../../public/Weather/Snow.png'
 import foggySunny from '../../../public/Weather/Foggy.png'
 import { useEffect, useState } from 'react'
-import SwiperAstro from './Swiper/Swiper'
 import { CiTempHigh } from "react-icons/ci";
 import { PiCloudRainThin } from "react-icons/pi";
-import { LuClock7 } from "react-icons/lu";
+import { LuClock7, LuSunset } from "react-icons/lu";
+import { LuSunrise } from "react-icons/lu";
 export interface ImainWeaProps {
   data?: {
     location: {
@@ -28,9 +28,73 @@ export interface ImainWeaProps {
     forecast: {
       forecastday: [
         {
+          date:number,
           day: {
             daily_chance_of_rain: string
-          }
+            maxtemp_c: number,
+            maxtemp_f: number,
+            mintemp_c: number,
+          },
+          astro: {
+            sunrise: string,
+            sunset: string,
+          },
+          hour: [
+            {
+              date: string,
+              time_epoch: number,
+              temp_c: number,
+              time: string,
+              condition: {
+                text: string,
+                icon: string,
+                code: number
+              },
+
+            }
+          ]
+        },
+        
+        {
+          date:number,
+
+          day: {
+            daily_chance_of_rain: string
+            maxtemp_c: number,
+            maxtemp_f: number,
+            mintemp_c: number,
+          },
+          astro: {
+            sunrise: string,
+            sunset: string,
+          },
+          hour: [
+            {
+              date: string,
+              time_epoch: number,
+              temp_c: number,
+              time: string,
+              condition: {
+                text: string,
+                icon: string,
+                code: number
+              },
+
+            }
+          ]
+        }
+        ,{
+          date:number,
+          day: {
+            daily_chance_of_rain: string
+            maxtemp_c: number,
+            maxtemp_f: number,
+            mintemp_c: number,
+          },
+          astro: {
+            sunrise: string,
+            sunset: string,
+          },
           hour: [
             {
               date: string,
@@ -53,6 +117,7 @@ export interface ImainWeaProps {
 const MainWea = ({ data }: ImainWeaProps) => {
   const [iconWeather, setIconWeather] = useState<string>()
   const [backGround, setBackGround] = useState<string>()
+  console.log(data)
   useEffect(() => {
     const conditionToIconMap: { [key: string]: string } = {
       "Clear": moon,
@@ -103,10 +168,12 @@ const MainWea = ({ data }: ImainWeaProps) => {
   const snowBg = "bg-gradient-to-b from-blue-100 to-blue-200"
 
   return <>
-    <div className={`col-span-4  mx-10 ${backGround}  bg -slate-900 rounded-2xl flex items-center`}>
-      <div className="flex items-start flex-col ml-5 w-full  ">
-        <div className='flex  items-center gap-x-1'>
+    <div className={`col-span-4  px-5 ${backGround}  bg -slate-900 rounded-2xl  flex flex-col lg:flex-row items-center`}>
+      <div className="flex items-start flex-col ml-5 w-full  order-2 lg:order-1  ">
+        <div className='flex w-full flex-col gap-x-1'>
           
+          <div className='flex justify-center lg:justify-start w-full items-center lg:order-1 order-2 my-3 '>
+
         {
   data && data.location && data.location.name && data.location.name.length > 10 ? (
     <p className="text-white text-xl mt-3 font-semibold">
@@ -118,20 +185,25 @@ const MainWea = ({ data }: ImainWeaProps) => {
     </p>
   )
 }
-          <p className="text-slate-200 text-sm mt-5    font-semibold  ">
+          <p className="text-slate-200 text-sm mt-5 mx-1  font-semibold  ">
             {
               data?.location?.country
 
             }
           </p>
+          </div>
+            
 
-        </div>
-        
-        <p className="text-white text-7xl mb-5 mt-20    font-semibold  ">
+        <div className='w-full order-1 lg:order-2'>
+          
+        <p className="text-white text-7xl lg:mb-5 lg:mt-2   text-center lg:text-start  font-semibold  ">
           {
             data?.current?.temp_c
           }&deg;
         </p>
+        </div>
+        </div>
+        
 
 
 
@@ -139,7 +211,7 @@ const MainWea = ({ data }: ImainWeaProps) => {
 
 
 
-        <div className={ `text-white bg-slate-800 rounded-3xl px-3 py-1 text-sm mb-2 font-semibold flex gap-x-4  items-center ${backGround} bg-gradient-to-br`}>
+        <div className={ `text-white bg-slate-800 w-full justify-center xl:justify-start  rounded-3xl px-3 py-1 text-sm mb-4 lg:mb-2 font-semibold flex gap-x-4  items-center ${backGround} bg-gradient-to-r flex-wrap`}>
 
         <p>
         <CiTempHigh className='inline text-xl mb-1'/>  Feels like {
@@ -163,6 +235,16 @@ const MainWea = ({ data }: ImainWeaProps) => {
           }
    
         </p>
+
+          <p>
+          <LuSunrise className='inline mb-1 mx-1'/>
+         { data?.forecast?.forecastday[0]?.astro?.sunrise}
+          </p><p>
+          <LuSunset className='inline mb-1 mx-1'/>
+         { data?.forecast?.forecastday[0]?.astro?.sunset}
+          </p>
+
+
         </div>
 
 
@@ -170,7 +252,7 @@ const MainWea = ({ data }: ImainWeaProps) => {
 
 
       </div>
-      <div className=" flex w-1/2 items-center flex-col mr-5 justify-between   h-full  ">
+      <div className=" flex w-full lg:w-1/2 items-center flex-col lg:mr-5 justify-between order-1   h-full  ">
         <img src={iconWeather} alt="" className='h-56 my-5 ' />
         <p className={`text-slate-200 text-sm mb-10   bg-slate-800 rounded-3xl px-3 font-semibold   ${backGround}`}>
           {
@@ -180,13 +262,7 @@ const MainWea = ({ data }: ImainWeaProps) => {
 
       </div>
     </div>
-    <div className={`col-span-4  mx-10  ${backGround} rounded-3xl`}>
-      <p className="text-slate-100 text-xl ml-5 my-3 font-bold text-center">
-        Today's Forecast
-      </p>
-      <SwiperAstro today={data?.forecast?.forecastday[0].hour} />
-    </div>
-
+    
 
   </>
 }
