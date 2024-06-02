@@ -211,7 +211,7 @@ const MainWea = ({ data }: ImainWeaProps) => {
 
 
 
-        <div className={ `text-white bg-slate-800 w-full justify-center xl:justify-start  rounded-3xl px-3 py-1 text-sm mb-4 lg:mb-2 font-semibold flex gap-x-4  items-center ${backGround} bg-gradient-to-r flex-wrap`}>
+        <div className={ `text-white bg-slate-800 w-full justify-center xl:justify-start  rounded-3xl px-3 py-1 text-sm mb-4 lg:mb-2 font-semibold flex gap-x-4  items-center ${backGround} lg:bg-gradient-to-r bg-gradient-to-b flex-wrap`}>
 
         <p>
         <CiTempHigh className='inline text-xl mb-1'/>  Feels like {

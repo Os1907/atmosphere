@@ -139,10 +139,10 @@ function App() {
             onKeyUp={(e: React.KeyboardEvent<HTMLInputElement>) => {
               setCountryName((e.target as HTMLInputElement).value)
             }}
-            type="text" placeholder="Type here" className="input  bg-slate-800 text-slate-300 font-medium  placeholder:text-slate-300 w-full rounded-full " />
+            type="text" placeholder="Search Locations" className="input  bg-slate-800 text-slate-300 font-medium  placeholder:text-slate-300 w-full rounded-full " />
         </div>
         {
-          weatherData ? <MainWea data={weatherData} /> : <div className="mx-5 w-1/2 flex my-10 justify-center col-span-4"><span className="loader ml-24"></span>
+          weatherData ? <MainWea data={weatherData} /> : <div className="mx-5 w-full flex my-10 justify-center col-span-4"><span className="loader mr-[7rem]"></span>
           </div>
 
         }
@@ -163,7 +163,7 @@ function App() {
                 </p>
                   : <p className="text-slate-100 text-xl ml-5 my-3 font-semibold text-center">
 
-                    <span className="mx-1   ">
+                    <span className="mx-1  block lg:inline ">
 
                       Forecast for 
                     </span>
