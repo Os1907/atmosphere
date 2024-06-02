@@ -130,7 +130,7 @@ function App() {
   }, [countryName])
 
   return <>
-    <section className=" min-h-screen  pt-14 bg-gradient-to-t to-slate-900 from-slate-950  ">
+    <section className=" min-h-screen  pt-14 background   ">
 
 
       <div className=" grid grid-cols-4  gap-y-5 py-5  lg:col-span-5 lg:mx-24 mx-4     ">
@@ -139,10 +139,10 @@ function App() {
             onKeyUp={(e: React.KeyboardEvent<HTMLInputElement>) => {
               setCountryName((e.target as HTMLInputElement).value)
             }}
-            type="text" placeholder="Search Locations" className="input  bg-slate-800 text-slate-300 font-medium  placeholder:text-slate-300 w-full rounded-full " />
+            type="text" placeholder="Search Locations" className="input  glass text-slate-300 font-medium  placeholder:text-slate-300 w-full rounded-full " />
         </div>
         {
-          weatherData ? <MainWea data={weatherData} /> : <div className="mx-5 w-full flex my-10 justify-center col-span-4"><span className="loader mr-[7rem]"></span>
+          weatherData ? <MainWea data={weatherData} /> : <div className="mx-5 w-full flex my-10 justify-center col-span-4"><span className="loader  lg:mr-[7rem]"></span>
           </div>
 
         }
@@ -150,7 +150,7 @@ function App() {
 
         {
           weatherData?.forecast?.forecastday.map((item, index) => (
-            <div className=" bg-slate-900 rounded-3xl col-span-4 lg:px-5   shadow-2xl">
+            <div className=" bg- slate-900 glass rounded-3xl col-span-4 lg:px-5 px-2  shadow-2xl">
 
 
 

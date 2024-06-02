@@ -169,7 +169,7 @@ const MainWea = ({ data }: ImainWeaProps) => {
 
   return <>
     <div className={`col-span-4  px-5 ${backGround}  bg -slate-900 rounded-2xl  flex flex-col lg:flex-row items-center`}>
-      <div className="flex items-start flex-col ml-5 w-full  order-2 lg:order-1  ">
+      <div className="flex items-start flex-col lg:ml-5 w-full  order-2 lg:order-1  ">
         <div className='flex w-full flex-col gap-x-1'>
           
           <div className='flex justify-center lg:justify-start w-full items-center lg:order-1 order-2 my-3 '>
