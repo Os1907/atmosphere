@@ -120,7 +120,6 @@ function App() {
         const weatherInfo: typeData = await weather(countryName);
         if (weatherInfo !== undefined) {
           setWeatherData(weatherInfo);
-          console.log(weatherInfo);
         }
       } catch (error) {
         console.error("Error fetching weather data:", error);

@@ -117,7 +117,6 @@ export interface ImainWeaProps {
 const MainWea = ({ data }: ImainWeaProps) => {
   const [iconWeather, setIconWeather] = useState<string>()
   const [backGround, setBackGround] = useState<string>()
-  console.log(data)
   useEffect(() => {
     const conditionToIconMap: { [key: string]: string } = {
       "Clear": moon,
