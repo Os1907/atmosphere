@@ -167,7 +167,7 @@ const MainWea = ({ data }: ImainWeaProps) => {
   const snowBg = "bg-gradient-to-b from-blue-100 to-blue-200"
 
   return <>
-    <div className={`col-span-4  px-5 ${backGround}  bg -slate-900 rounded-2xl  flex flex-col lg:flex-row items-center`}>
+    <div className={`col-span-4  px-5 ${backGround}  bg -slate-900 rounded-[55px] lg:rounded-full  flex flex-col lg:flex-row items-center`}>
       <div className="flex items-start flex-col lg:ml-5 w-full  order-2 lg:order-1  ">
         <div className='flex w-full flex-col gap-x-1'>
           
