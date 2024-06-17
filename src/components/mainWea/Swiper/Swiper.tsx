@@ -40,13 +40,13 @@ export default function SwiperAstro({ today }: Itoday) {
                     }}
                     navigation={true}
                     modules={[Autoplay]}
-                    className="mySwiper rounded-3xl   "
+                    className="mySwiper rounded-3xl     "
                 >
                     {
                         today?.map((item) => (
                             <SwiperSlide key={item?.time_epoch}>
                                 
-                              <div className={ "flex flex-col items-center py-4 h-40 md:h-44  rounded-3xl lg:w-2/3 w-full my-3 glass "}>
+                              <div className={ "bg-slate-950 flex flex-col items-center py-4 h-40 md:h-44  rounded-full lg:w-2/3 w-full my-3 g lass  "}>
                                 <p className="text-white text-[12px] lg:text-sm mt-3 font-semibold">
                                   {Number(item?.time?.slice(10, 13)) > 12
                                     ? `${Number(item?.time?.slice(10, 13)) - 12}:${item?.time?.slice(11, 13)}`

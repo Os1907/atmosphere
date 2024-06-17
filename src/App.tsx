@@ -129,7 +129,7 @@ function App() {
   }, [countryName])
 
   return <>
-    <section className=" min-h-screen  pt-14 background   ">
+    <section className=" min-h-screen  pt-14  bg-slate-950 [#19191a]  ">
 
 
       <div className=" grid grid-cols-4  gap-y-5 py-5  lg:col-span-5 lg:mx-24 mx-4     ">
@@ -149,7 +149,7 @@ function App() {
 
         {
           weatherData?.forecast?.forecastday.map((item, index) => (
-            <div className=" bg- slate-900 glass rounded-3xl col-span-4 lg:px-5 px-2  shadow-2xl">
+            <div className=" bg-slate-900  rounded-[55px] lg:rounded-full overflow-hidden col-span-4 lg:px-5 px-2  shadow-2xl ">
 
 
 
@@ -170,7 +170,7 @@ function App() {
 
                   </p>
               }
-              <div className={ `text-white  rounded-3xl px-3 py-1 text-sm mb-2 font-semibold flex gap-x-4 justify-center items-center flex-wrap `}>
+              <div className={ `text-white   rounded-3xl px-3 py-1 text-sm mb-2 font-semibold flex gap-x-4 justify-center items-center flex-wrap  `}>
 
               <p>
 <HiMiniArrowSmallUp className='inline text-xl mb-1 '/>  MaxTemp {
