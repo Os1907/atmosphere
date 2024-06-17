@@ -168,10 +168,10 @@ const MainWea = ({ data }: ImainWeaProps) => {
 
   return <>
     <div className={`col-span-4  px-5  bg  bg-slate-900 rounded-[55px] lg:rounded-full  flex flex-col lg:flex-row items-center`}>
-      <div className="flex items-start flex-col lg:ml-5 w-full  order-2 lg:order-1  ">
-        <div className='flex w-full flex-col gap-x-1 '>
+      <div className="flex items-start flex-col lg:ml-5  w-full  order-2 lg:order-1  ">
+        <div className='flex w-full flex-col gap-x-1  '>
           
-          <div className='flex  justify-center lg:justify-start w-full items-center lg:order-1 order-2 my-3 '>
+          <div className='flex  justify-center lg :justify-start w-full items-center lg:order-1 order-2 my-3 '>
 
         {
   data && data.location && data.location.name && data.location.name.length > 10 ? (
@@ -195,7 +195,7 @@ const MainWea = ({ data }: ImainWeaProps) => {
 
         <div className='w-full order-1 lg:order-2'>
           
-        <p className="text-white text-7xl lg:mb-5 lg:mt-2   text-center lg:text-start  font-semibold  ">
+        <p className="text-white text-7xl lg:mb-5 lg:mt-2   text-center   font-semibold  ">
           {
             data?.current?.temp_c
           }&deg;
@@ -210,7 +210,7 @@ const MainWea = ({ data }: ImainWeaProps) => {
 
 
 
-        <div className={ `text-white bg-slate-950 w-full justify-center xl:justify-start  rounded-full px-3 py-1 text-sm mb-4 lg:mb-2 font-semibold flex gap-x-4  items-center   flex-wrap`}>
+        <div className={ `text-white  w-full justify-center   rounded-full px-3 py-1 text-sm mb-4 lg:mb-2 font-semibold flex gap-x-4  items-center   flex-wrap`}>
 
         <p>
         <CiTempHigh className='inline text-xl mb-1'/>  Feels like {
