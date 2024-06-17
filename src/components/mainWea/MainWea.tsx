@@ -116,7 +116,7 @@ export interface ImainWeaProps {
 }
 const MainWea = ({ data }: ImainWeaProps) => {
   const [iconWeather, setIconWeather] = useState<string>()
-  const [backGround, setBackGround] = useState<string>()
+  // const [backGround, setBackGround] = useState<string>()
   useEffect(() => {
     const conditionToIconMap: { [key: string]: string } = {
       "Clear": moon,
@@ -143,28 +143,28 @@ const MainWea = ({ data }: ImainWeaProps) => {
     const icon = conditionToIconMap[conditionText];
     setIconWeather(icon);
 
-    if (data?.current?.condition?.text === "Clear" && data?.location?.localtime?.slice(10, 12) < "6") {
-      setBackGround(nightClear)
-    } else if (data?.current?.condition?.text === "Overcast" || data?.current?.condition?.text === "Cloudy" || data?.current?.condition?.text === "Partly cloudy") {
-      setBackGround(cloudyBg)
-    } else if (data?.current?.condition?.text === "Sunny" && data?.location?.localtime?.slice(10, 12) <= "6") {
-      setBackGround(sun)
-    } else if (data?.current?.condition?.text === "Mist") {
-      setBackGround(cloudyBg)
-    } else if (data?.current?.condition?.text === "Patchy rain possible" || data?.current?.condition?.text === "Patchy light rain with thunder" || data?.current?.condition?.text === "Light drizzle" || data?.current?.condition?.text === "Rain" || data?.current?.condition?.text === "Light rain" || data?.current?.condition?.text === "Moderate rain at times" || data?.current?.condition?.text === "Heavy rain at times" || data?.current?.condition?.text === "Heavy rain" && data?.location?.localtime?.slice(10, 12) < "6") {
-      setBackGround(rain)
-    } else if (data?.current?.condition?.text === "Freezing fog" || data?.current?.condition?.text === "Snow") {
-      setBackGround(snowBg)
-    } else if (data?.current?.condition?.text === " fog") {
-      setBackGround(foggySunny)
-    }
+    // if (data?.current?.condition?.text === "Clear" && data?.location?.localtime?.slice(10, 12) < "6") {
+    //   setBackGround(nightClear)
+    // } else if (data?.current?.condition?.text === "Overcast" || data?.current?.condition?.text === "Cloudy" || data?.current?.condition?.text === "Partly cloudy") {
+    //   setBackGround(cloudyBg)
+    // } else if (data?.current?.condition?.text === "Sunny" && data?.location?.localtime?.slice(10, 12) <= "6") {
+    //   setBackGround(sun)
+    // } else if (data?.current?.condition?.text === "Mist") {
+    //   setBackGround(cloudyBg)
+    // } else if (data?.current?.condition?.text === "Patchy rain possible" || data?.current?.condition?.text === "Patchy light rain with thunder" || data?.current?.condition?.text === "Light drizzle" || data?.current?.condition?.text === "Rain" || data?.current?.condition?.text === "Light rain" || data?.current?.condition?.text === "Moderate rain at times" || data?.current?.condition?.text === "Heavy rain at times" || data?.current?.condition?.text === "Heavy rain" && data?.location?.localtime?.slice(10, 12) < "6") {
+    //   setBackGround(rain)
+    // } else if (data?.current?.condition?.text === "Freezing fog" || data?.current?.condition?.text === "Snow") {
+    //   setBackGround(snowBg)
+    // } else if (data?.current?.condition?.text === " fog") {
+    //   setBackGround(foggySunny)
+    // }
   }, [data])
 
-  const rain = "bg-gradient-to-b from-blue-300 via-gray-400 to-gray-600"
-  const sun = "bg-gradient-to-tr from-yellow-200 to-orange-400"
-  const nightClear = "bg-gradient-to-b from-indigo-800 to-blue-900"
-  const cloudyBg = "bg-gradient-to-tr from-gray-300 via-gray-400 to-gray-500"
-  const snowBg = "bg-gradient-to-b from-blue-100 to-blue-200"
+  // const rain = "bg-gradient-to-b from-blue-300 via-gray-400 to-gray-600"
+  // const sun = "bg-gradient-to-tr from-yellow-200 to-orange-400"
+  // const nightClear = "bg-gradient-to-b from-indigo-800 to-blue-900"
+  // const cloudyBg = "bg-gradient-to-tr from-gray-300 via-gray-400 to-gray-500"
+  // const snowBg = "bg-gradient-to-b from-blue-100 to-blue-200"
 
   return <>
     <div className={`col-span-4  px-5  bg  bg-slate-900 rounded-[55px] lg:rounded-full  flex flex-col lg:flex-row items-center`}>
