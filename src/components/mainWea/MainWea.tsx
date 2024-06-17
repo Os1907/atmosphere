@@ -167,11 +167,11 @@ const MainWea = ({ data }: ImainWeaProps) => {
   const snowBg = "bg-gradient-to-b from-blue-100 to-blue-200"
 
   return <>
-    <div className={`col-span-4  px-5 ${backGround}  bg -slate-900 rounded-[55px] lg:rounded-full  flex flex-col lg:flex-row items-center`}>
+    <div className={`col-span-4  px-5  bg  bg-slate-900 rounded-[55px] lg:rounded-full  flex flex-col lg:flex-row items-center`}>
       <div className="flex items-start flex-col lg:ml-5 w-full  order-2 lg:order-1  ">
-        <div className='flex w-full flex-col gap-x-1'>
+        <div className='flex w-full flex-col gap-x-1 '>
           
-          <div className='flex justify-center lg:justify-start w-full items-center lg:order-1 order-2 my-3 '>
+          <div className='flex  justify-center lg:justify-start w-full items-center lg:order-1 order-2 my-3 '>
 
         {
   data && data.location && data.location.name && data.location.name.length > 10 ? (
@@ -210,7 +210,7 @@ const MainWea = ({ data }: ImainWeaProps) => {
 
 
 
-        <div className={ `text-white bg-slate-800 w-full justify-center xl:justify-start  rounded-3xl px-3 py-1 text-sm mb-4 lg:mb-2 font-semibold flex gap-x-4  items-center ${backGround} lg:bg-gradient-to-r bg-gradient-to-b flex-wrap`}>
+        <div className={ `text-white bg-slate-950 w-full justify-center xl:justify-start  rounded-full px-3 py-1 text-sm mb-4 lg:mb-2 font-semibold flex gap-x-4  items-center   flex-wrap`}>
 
         <p>
         <CiTempHigh className='inline text-xl mb-1'/>  Feels like {
@@ -253,7 +253,7 @@ const MainWea = ({ data }: ImainWeaProps) => {
       </div>
       <div className=" flex w-full lg:w-1/2 items-center flex-col lg:mr-5 justify-between order-1   h-full  ">
         <img src={iconWeather} alt="" className='h-56 my-5 ' />
-        <p className={`text-slate-200 text-sm mb-10   bg-slate-800 rounded-3xl px-3 font-semibold   ${backGround}`}>
+        <p className={`text-slate-200 text-sm mb-10   bg-slate-950 rounded-3xl px-3 font-semibold  `}>
           {
             data?.current?.condition?.text
           }
